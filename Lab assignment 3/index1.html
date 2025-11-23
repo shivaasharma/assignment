@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shiva Sharma - Portfolio</title>
+  <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="container header-flex">
+      <h1 class="logo">Shiva Sharma</h1>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <button class="menu-btn">☰</button>
+    </div>
+  </header>
+
+  <!-- HERO SECTION (Flexbox) -->
+   <section id="hero" class="container hero">
+  <div class="hero-text">
+      <h2>Hello, I'm <span class="highlight">Shiva</span></h2>
+      <h3 class="role-animate">Full Stack Developer</h3>
+      <p>I build beautiful, modern and responsive websites using HTML, CSS, JavaScript and frameworks.</p>
+
+      <a href="#projects" class="btn">View Projects</a>
+      <a href="#contact" class="btn-outline">Contact Me</a>
+  </div>
+</section>
+  
+  <!-- ABOUT SECTION -->
+  <section id="about" class="container about">
+    <div>
+      <h2>About Me</h2>
+      <p>I am passionate about learning web development and creating beautiful responsive websites. I enjoy exploring new technologies and improving my skills.</p>
+      <p>Connect with me on  
+        <a href="https://www.instagram.com/shivva_sharma" target="_blank">Instagram</a>
+      </p>
+    </div>
+
+    <div class="about-card">
+      <img src="https://www.flaticon.com/free-icon/student_4537019" alt="Profile Small">
+      <h3>Shiva S.</h3>
+      <p>Aspiring Full Stack Dev</p>
+    </div>
+  </section>
+
+  <!-- PROJECTS SECTION (Grid) -->
+  <section id="projects" class="container">
+    <h2 class="center">My Projects</h2>
+
+    <div class="projects-grid">
+      <div class="card">
+        <h3>Portfolio Website</h3>
+        <p>A simple, responsive portfolio website built using HTML, CSS, and Flexbox.</p>
+      </div>
+
+      <div class="card">
+        <h3>User Form</h3>
+        <p>A styled contact form for collecting user data.</p>
+      </div>
+
+      <div class="card">
+        <h3>JS Mini App</h3>
+        <p>A beginner-friendly JavaScript practice project.</p>
+      </div>
+
+      <div class="card">
+        <h3>More Coming...</h3>
+        <p>I will keep adding projects as I learn more.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS SECTION (Grid) -->
+  <section id="skills" class="container">
+    <h2 class="center">Skills</h2>
+
+    <div class="skills-grid">
+      <div class="skill">HTML <span>Beginner</span></div>
+      <div class="skill">CSS <span>Beginner</span></div>
+      <div class="skill">JavaScript <span>Learning</span></div>
+      <div class="skill">Responsive Design <span>Learning</span></div>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section id="contact" class="container">
+    <h2 class="center">Contact Me</h2>
+
+    <form class="contact-form">
+      <label>Name</label>
+      <input type="text" placeholder="Enter your name" required>
+
+      <label>Email</label>
+      <input type="email" placeholder="Enter your email" required>
+
+      <label>Message</label>
+      <textarea placeholder="Enter your message" required></textarea>
+
+      <button class="btn" type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>© 2025 Shiva Sharma — Built with HTML & CSS -- See Ya
+    </p>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const btn = document.querySelector(".menu-btn");
+    const links = document.querySelector(".nav-links");
+
+    btn.addEventListener("click", () => {
+      links.classList.toggle("open");
+    });
+  </script>
+
+</body>
+</html>

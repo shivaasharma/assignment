@@ -1,0 +1,331 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+:root {
+  --primary: #1e3a8a;
+  --secondary: #2563eb;
+  --accent: #facc15;
+  --bg: #f7f9fc;
+  --radius: 12px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: var(--bg);
+  color: #0f172a;
+}
+
+.container {
+  width: min(92%, 1100px);
+  margin: auto;
+}
+
+/* ------------------------------
+   HEADER
+------------------------------ */
+header {
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  padding: 0.4rem 0;                /* smaller height */
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.2rem 0;
+}
+
+.logo {
+  color: white;
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 1rem;
+  padding: 0;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  padding: .25rem .5rem;
+  position: relative;
+  transition: 0.3s;
+}
+
+/* Underline animation */
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0%;
+  height: 2px;
+  background: var(--accent);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.menu-btn {
+  display: none;
+  background: transparent;
+  border: 0;
+  font-size: 1.8rem;
+  color: white;
+}
+
+/* ------------------------------
+   ANIMATIONS
+------------------------------ */
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+section {
+  animation: fadeIn 1s ease;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-40px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes colorShift {
+  0% { color: var(--primary); }
+  50% { color: var(--secondary); }
+  100% { color: var(--accent); }
+}
+
+@keyframes glowPulse {
+  0% { text-shadow: 0 0 0px var(--secondary); }
+  50% { text-shadow: 0 0 10px var(--secondary); }
+  100% { text-shadow: 0 0 0px var(--secondary); }
+}
+
+/* ------------------------------
+   HERO SECTION
+------------------------------ */
+.hero {
+  padding: 3rem 0;
+  text-align: left;
+}
+
+.hero-text h2 {
+  font-size: 2.3rem;
+  margin: 0;
+  color: var(--primary);
+  animation: slideIn 0.9s ease-out;
+}
+
+.highlight {
+  color: var(--secondary);
+}
+
+.role-animate {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin: .4rem 0 1rem;
+  animation: colorShift 3s infinite linear, glowPulse 1.8s infinite ease-in-out;
+}
+
+.hero-text p {
+  max-width: 500px;
+  margin-bottom: 1.3rem;
+}
+
+/* ------------------------------
+   BUTTONS
+------------------------------ */
+.btn {
+  display: inline-block;
+  padding: .7rem 1.2rem;
+  background: var(--primary);
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: var(--secondary);
+  transform: translateY(-4px) scale(1.05);
+}
+
+.btn-outline {
+  display: inline-block;
+  padding: .7rem 1.2rem;
+  border: 2px solid var(--primary);
+  color: var(--primary);
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn-outline:hover {
+  background: var(--primary);
+  color: white;
+  transform: translateY(-4px) scale(1.05);
+}
+
+/* ------------------------------
+   ABOUT SECTION
+------------------------------ */
+.about {
+  display: flex;
+  gap: 2rem;
+  padding: 3rem 0;
+  align-items: center;
+}
+
+.about-card {
+  background: white;
+  padding: 1rem;
+  border-radius: var(--radius);
+  text-align: center;
+  width: 220px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.about-card img {
+  width: 130px;
+  height: 160px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+/* ------------------------------
+   PROJECTS (GRID)
+------------------------------ */
+.center {
+  text-align: center;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.card {
+  background: white;
+  padding: 1rem;
+  border-radius: var(--radius);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+  transition: .3s;
+}
+
+.card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 16px 35px rgba(0,0,0,0.12);
+}
+
+/* ------------------------------
+   SKILLS (GRID)
+------------------------------ */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: .8rem;
+  margin-top: 1rem;
+}
+
+.skill {
+  background: white;
+  padding: .7rem;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  transition: 0.3s;
+}
+
+.skill:hover {
+  transform: scale(1.05);
+  background: #eef4ff;
+  cursor: pointer;
+}
+
+/* ------------------------------
+   CONTACT FORM
+------------------------------ */
+.contact-form {
+  max-width: 450px;
+  margin: auto;
+  background: white;
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  box-shadow: 0px 10px 25px rgba(0,0,0,0.05);
+}
+
+.contact-form input,
+textarea {
+  width: 100%;
+  padding: .7rem;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  margin-bottom: 1rem;
+  font-family: inherit;
+}
+
+textarea {
+  resize: vertical;
+}
+
+/* ------------------------------
+   FOOTER
+------------------------------ */
+footer {
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  padding: 1rem 0;
+  text-align: center;
+  color: white;
+  margin-top: 2rem;
+}
+
+/* ------------------------------
+   RESPONSIVE
+------------------------------ */
+@media (max-width: 768px) {
+  .hero,
+  .about {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: rgba(255,255,255,0.15);
+    padding: 1rem;
+    border-radius: var(--radius);
+    margin-top: .5rem;
+  }
+
+  .nav-links.open {
+    display: block;
+  }
+
+  .menu-btn {
+    display: block;
+  }
+}
